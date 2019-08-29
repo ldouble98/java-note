@@ -1,0 +1,1007 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CAS · java学习</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lixiaoshuang">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="JUC.html" />
+    
+    
+    <link rel="prev" href="乐观锁与悲观锁.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/ldouble98" target="_blank" class="custom-link">github</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://blog.csdn.net/weixin_38190582" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/li-xiao-shuang-53-63/activities" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java学习笔记</li>
+        
+        
+    
+
+    
+        
+        <li class="header">citicbank</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../citicbank/张科老师学习知识点.html">
+            
+                <a href="../citicbank/张科老师学习知识点.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    citicbank
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java并发</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="乐观锁与悲观锁.html">
+            
+                <a href="乐观锁与悲观锁.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    乐观锁与悲观锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="CAS.html">
+            
+                <a href="CAS.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    CAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="JUC.html">
+            
+                <a href="JUC.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    JUC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="AQS原理.html">
+            
+                <a href="AQS原理.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    AQS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">分布式</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../分布式/分布式事务.html">
+            
+                <a href="../分布式/分布式事务.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    分布式事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../分布式/网络编程.html">
+            
+                <a href="../分布式/网络编程.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">消息队列</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../消息队列/ActiveMQ.html">
+            
+                <a href="../消息队列/ActiveMQ.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    ActiveMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../消息队列/RabbitMQ.html">
+            
+                <a href="../消息队列/RabbitMQ.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">jvm</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../java/jvm/类加载机制.html">
+            
+                <a href="../java/jvm/类加载机制.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    类加载机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../java/jvm/对象的创建与内存分配.html">
+            
+                <a href="../java/jvm/对象的创建与内存分配.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    对象的创建与内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../java/jvm/jvm标准.html">
+            
+                <a href="../java/jvm/jvm标准.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    jvm标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../java/jvm/垃圾收集器.html">
+            
+                <a href="../java/jvm/垃圾收集器.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    垃圾回收器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../java/jvm/GC.html">
+            
+                <a href="../java/jvm/GC.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../java/java基础/java基础.html">
+            
+                <a href="../java/java基础/java基础.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    java 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../java/java基础/HashMap.html">
+            
+                <a href="../java/java基础/HashMap.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../java/java基础/ConcurrentHashMap.html">
+            
+                <a href="../java/java基础/ConcurrentHashMap.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    ConcurrentHashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../java/java基础/Set.html">
+            
+                <a href="../java/java基础/Set.html">
+            
+                    
+                        <b>8.4.</b>
+                    
+                    Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../java/java基础/List.html">
+            
+                <a href="../java/java基础/List.html">
+            
+                    
+                        <b>8.5.</b>
+                    
+                    List
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 线程</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../java/java线程/java多线程.html">
+            
+                <a href="../java/java线程/java多线程.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../java/java线程/lock.html">
+            
+                <a href="../java/java线程/lock.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../java/java线程/ReentrantLock.html">
+            
+                <a href="../java/java线程/ReentrantLock.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    ReentrantLock 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 框架</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../java/java框架/spring/spring注入方式.html">
+            
+                <a href="../java/java框架/spring/spring注入方式.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    spring注入方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../java/java框架/spring/SpringBean生命周期.html">
+            
+                <a href="../java/java框架/spring/SpringBean生命周期.html">
+            
+                    
+                        <b>10.2.</b>
+                    
+                    springbean生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../java/java框架/spring/SpringMVC.html">
+            
+                <a href="../java/java框架/spring/SpringMVC.html">
+            
+                    
+                        <b>10.3.</b>
+                    
+                    springmvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="../java/java框架/spring/AOP.html">
+            
+                <a href="../java/java框架/spring/AOP.html">
+            
+                    
+                        <b>10.4.</b>
+                    
+                    AOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="../java/java框架/spring/Ioc.html">
+            
+                <a href="../java/java框架/spring/Ioc.html">
+            
+                    
+                        <b>10.5.</b>
+                    
+                    IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="../java/java框架/spring/proxy.html">
+            
+                <a href="../java/java框架/spring/proxy.html">
+            
+                    
+                        <b>10.6.</b>
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="../java/java框架/spring/cglib.html">
+            
+                <a href="../java/java框架/spring/cglib.html">
+            
+                    
+                        <b>10.7.</b>
+                    
+                    cglib
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="../java/java框架/hibernate.html">
+            
+                <a href="../java/java框架/hibernate.html">
+            
+                    
+                        <b>10.8.</b>
+                    
+                    hibernate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="../java/java框架/springboot.html">
+            
+                <a href="../java/java框架/springboot.html">
+            
+                    
+                        <b>10.9.</b>
+                    
+                    springboot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="../java/java框架/springcloud.html">
+            
+                <a href="../java/java框架/springcloud.html">
+            
+                    
+                        <b>10.10.</b>
+                    
+                    springcloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 面试</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../java/java面试题.html">
+            
+                <a href="../java/java面试题.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    java面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../数据库/MySQL/mysql索引.html">
+            
+                <a href="../数据库/MySQL/mysql索引.html">
+            
+                    
+                        <b>12.1.</b>
+                    
+                    mysql索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../数据库/MySQL/SQL优化.html">
+            
+                <a href="../数据库/MySQL/SQL优化.html">
+            
+                    
+                        <b>12.2.</b>
+                    
+                    SQL 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="../数据库/幂等性.html">
+            
+                <a href="../数据库/幂等性.html">
+            
+                    
+                        <b>12.3.</b>
+                    
+                    幂等性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="../数据库/数据库锁机制.html">
+            
+                <a href="../数据库/数据库锁机制.html">
+            
+                    
+                        <b>12.4.</b>
+                    
+                    数据库锁机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">network</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="../network/http.html">
+            
+                <a href="../network/http.html">
+            
+                    
+                        <b>13.1.</b>
+                    
+                    http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="../network/TCP三次协议.html">
+            
+                <a href="../network/TCP三次协议.html">
+            
+                    
+                        <b>13.2.</b>
+                    
+                    Tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">面试经验</li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="../面试经验/interview.html">
+            
+                <a href="../面试经验/interview.html">
+            
+                    
+                        <b>14.1.</b>
+                    
+                    interview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="14.2" data-path="../面试经验/阿里大佬面试题.html">
+            
+                <a href="../面试经验/阿里大佬面试题.html">
+            
+                    
+                        <b>14.2.</b>
+                    
+                    啊里
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CAS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cas-&#x7B14;&#x8BB0;">CAS &#x7B14;&#x8BB0;</h1>
+<blockquote>
+<p>CompareAndSet or CompareAndSwap &#x6BD4;&#x8F83;&#x5728;&#x4EA4;&#x6362;
+ &#x5229;&#x7528;CAS&#x5B9E;&#x73B0;&#x4E50;&#x89C2;&#x9501;&#xFF0C;&#x4E50;&#x89C2;&#x9501;&#x662F;&#x4E00;&#x79CD;&#x601D;&#x60F3;&#x3002;CAS&#x662F;&#x8FD9;&#x79CD;&#x601D;&#x60F3;&#x7684;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</p>
+<h1 id="&#x64CD;&#x4F5C;&#x6570;">&#x64CD;&#x4F5C;&#x6570;</h1>
+<p>CAS&#x4E0A;&#x6709;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#xFF1A;</p>
+<ul>
+<li>V&#xFF1A; &#x9700;&#x8981;&#x8BFB;&#x5199;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;</li>
+<li>A&#xFF1A; &#x65E7;&#x7684;&#x9884;&#x671F;&#x53D8;&#x91CF;&#x503C;</li>
+<li>B&#xFF1A; &#x62DF;&#x5199;&#x5165;&#x7684;&#x65B0;&#x7684;&#x503C;
+&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B; &#x5728;&#x8FDB;&#x884C;CompareAndSwap&#x4E4B;&#x524D;&#xFF0C;&#x5C06;V&#x4E0E;A&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x8005;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x5C06;
+&#x6B64;&#x4F4D;&#x7F6E;&#x7684;&#x503C;&#x66F4;&#x65B0;&#x4E3A;B&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF1B;&#x65E0;&#x8BBA;&#x90A3;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x90FD;&#x4F1A;&#x653E;&#x56DE;V&#x4E2D;
+&#x5B58;&#x653E;&#x7684;&#x503C;</li>
+</ul>
+</blockquote>
+<p>&#x6211;&#x8BA4;&#x4E3A;&#x4F4D;&#x7F6E;<code>V &#x5E94;&#x8BE5;&#x5305;&#x542B;&#x503C; A&#xFF1B;&#x5982;&#x679C;&#x5305;&#x542B;&#x8BE5;&#x503C;&#xFF0C;&#x5219;&#x5C06; B &#x653E;&#x5230;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF1B;
+&#x5426;&#x5219;&#xFF0C;&#x4E0D;&#x8981;&#x66F4;&#x6539;&#x8BE5;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EA;&#x544A;&#x8BC9;&#x6211;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#x73B0;&#x5728;&#x7684;&#x503C;&#x5373;&#x53EF;</code>&#x3002;</p>
+<p>JNI java native interface &#x5B8C;&#x6210;CPU&#x6307;&#x4EE4;&#x7684;&#x64CD;&#x4F5C; native&#x5173;&#x952E;&#x5B57;&#x672C;&#x5730;&#x65B9;&#x6CD5;</p>
+<p>CAS&#x901A;&#x8FC7;&#x8C03;&#x7528;JNI&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x800C;compareAndSwapInt&#x5C31;&#x662F;&#x501F;&#x52A9;C&#x6765;&#x8C03;&#x7528;CPU&#x5E95;&#x5C42;&#x6307;&#x4EE4;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<h1 id="cas-&#x7F3A;&#x70B9;">CAS &#x7F3A;&#x70B9;</h1>
+<ol>
+<li><p>ABA &#x95EE;&#x9898;</p>
+<p> &#x6BD4;&#x5982;&#x8BF4;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;one&#x4ECE;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;V&#x4E2D;&#x53D6;&#x51FA;A&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;two&#x4E5F;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x53D6;&#x51FA;A&#xFF0C;
+ &#x5E76;&#x4E14;two&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x53D8;&#x6210;&#x4E86;B&#xFF0C;&#x7136;&#x540E;two&#x53C8;&#x5C06;V&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x636E;&#x53D8;&#x6210;A&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x7EBF;&#x7A0B;one&#x8FDB;&#x884C;CAS&#x64CD;&#x4F5C;&#x53D1;&#x73B0;&#x5185;&#x5B58;&#x4E2D;&#x4ECD;&#x7136;&#x662F;A&#xFF0C;&#x7136;&#x540E;one&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x3002;&#x5C3D;&#x7BA1;&#x7EBF;&#x7A0B;one&#x7684;CAS&#x64CD;&#x4F5C;&#x6210;&#x529F;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6F5C;&#x85CF;&#x7684;&#x95EE;&#x9898;</p>
+<blockquote>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x3000;&#x4ECE;Java1.5&#x5F00;&#x59CB;JDK&#x7684;atomic&#x5305;&#x91CC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;
+ AtomicStampedReference&#x6765;&#x89E3;&#x51B3;ABA&#x95EE;&#x9898;</p>
+</blockquote>
+<p> &#x9996;&#x5148;&#x68C0;&#x67E5;<code>&#x5F53;&#x524D;&#x5F15;&#x7528;</code>&#x662F;&#x5426;&#x7B49;&#x4E8E;<code>&#x9884;&#x671F;&#x5F15;&#x7528;</code>&#xFF0C;&#x5E76;&#x4E14;<code>&#x5F53;&#x524D;&#x6807;&#x5FD7;</code>&#x662F;&#x5426;&#x7B49;&#x4E8E;<code>&#x9884;&#x671F;&#x6807;&#x5FD7;</code>&#xFF0C;
+ &#x5982;&#x679C;<code>&#x5168;&#x90E8;&#x76F8;&#x7B49;</code>&#xFF0C;&#x5219;&#x4EE5;<code>&#x539F;&#x5B50;&#x65B9;&#x5F0F;</code>&#x5C06;&#x8BE5;&#x5F15;&#x7528;&#x548C;&#x8BE5;&#x6807;&#x5FD7;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;</p>
+</li>
+<li><p>&#x5FAA;&#x73AF;&#x65F6;&#x95F4;&#x957F;&#x5F00;&#x9500;&#x5927;</p>
+<p> &#x81EA;&#x65CB;CAS&#xFF08;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x5C31;&#x4E00;&#x76F4;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x6210;&#x529F;&#xFF09;</p>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x7684;&#x539F;&#x5B50;&#x64CD;&#x4F5C;
+Java1.5&#x5F00;&#x59CB;JDK&#x63D0;&#x4F9B;&#x4E86;AtomicReference&#x7C7B;&#x6765;&#x4FDD;&#x8BC1;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x539F;&#x5B50;&#x6027;&#xFF0C;
+&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x91CC;&#x6765;&#x8FDB;&#x884C;CAS&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+</ol>
+<h1 id="&#x4E0E;synchronized&#x6BD4;&#x8F83;">&#x4E0E;Synchronized&#x6BD4;&#x8F83;</h1>
+<p>synchronized&#x5728;jdk1.6&#x4E4B;&#x540E;&#xFF0C;&#x5DF2;&#x7ECF;&#x6539;&#x8FDB;&#x4F18;&#x5316;&#x3002;
+synchronized&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x4E3B;&#x8981;&#x4F9D;&#x9760;<code>Lock-Free</code>&#x7684;&#x961F;&#x5217;&#xFF0C;&#x57FA;&#x672C;&#x601D;&#x8DEF;&#x662F;<code>&#x81EA;&#x65CB;&#x540E;&#x963B;&#x585E;</code>&#xFF0C;&#x7ADE;&#x4E89;&#x5207;&#x6362;&#x540E;&#x7EE7;&#x7EED;&#x7ADE;&#x4E89;&#x9501;&#xFF0C;
+&#x7A0D;&#x5FAE;&#x727A;&#x7272;&#x4E86;&#x516C;&#x5E73;&#x6027;&#xFF0C;&#x4F46;&#x83B7;&#x5F97;&#x4E86;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#x3002;
+&#x5728;<code>&#x7EBF;&#x7A0B;&#x51B2;&#x7A81;&#x8F83;&#x5C11;</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x548C;CAS&#x7C7B;&#x4F3C;&#x7684;&#x6027;&#x80FD;&#xFF1B;</p>
+<p><code>&#x7EBF;&#x7A0B;&#x51B2;&#x7A81;&#x4E25;&#x91CD;</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6027;&#x80FD;&#x8FDC;&#x9AD8;&#x4E8E;CAS&#x3002;</p>
+<p>&#x53C2;&#x8003;&#x535A;&#x5BA2;&#xFF1A;[<a href="https://www.cnblogs.com/qjjazry/p/6581568.html" target="_blank">https://www.cnblogs.com/qjjazry/p/6581568.html</a>]</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="乐观锁与悲观锁.html" class="navigation navigation-prev " aria-label="Previous page: 乐观锁与悲观锁">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="JUC.html" class="navigation navigation-next " aria-label="Next page: JUC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CAS","level":"4.2","depth":1,"next":{"title":"JUC","level":"4.3","depth":1,"path":"并发/JUC.md","ref":"并发/JUC.md","articles":[]},"previous":{"title":"乐观锁与悲观锁","level":"4.1","depth":1,"path":"并发/乐观锁与悲观锁.md","ref":"并发/乐观锁与悲观锁.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"并发/CAS.md","mtime":"2019-04-19T03:21:38.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T05:35:14.140Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

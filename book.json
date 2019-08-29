@@ -1,0 +1,36 @@
+{
+    "title": "java学习",
+    "author" : "lixiaoshuang",
+    "description" : "java学习笔记-smalldouble",
+    "language" : "zh-hans",
+    "structure": {
+        "readme": "README.md"
+    },
+    "pluginsConfig": {
+        "anchor-navigation-ex": {
+            "isShowTocTitleIcon": true
+        },
+        "theme-default": {
+            "showLevel": true
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false, 
+            "showGoTop": false 
+        }
+    },
+    "links" : {
+        "sidebar" : {
+            "github" : "https://github.com/ldouble98",
+            "博客":"https://blog.csdn.net/weixin_38190582",
+            "知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    }
+}
+
