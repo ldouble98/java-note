@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JUC · java学习</title>
+        <title>ConcurrentHashMap · java学习</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -55,10 +55,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="AQS原理.html" />
+    <link rel="next" href="Set.html" />
     
     
-    <link rel="prev" href="CAS.html" />
+    <link rel="prev" href="HashMap.html" />
     
 
     </head>
@@ -172,9 +172,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="乐观锁与悲观锁.html">
+        <li class="chapter " data-level="3.1" data-path="../并发/乐观锁与悲观锁.html">
             
-                <a href="乐观锁与悲观锁.html">
+                <a href="../并发/乐观锁与悲观锁.html">
             
                     
                         <b>3.1.</b>
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="CAS.html">
+        <li class="chapter " data-level="3.2" data-path="../并发/CAS.html">
             
-                <a href="CAS.html">
+                <a href="../并发/CAS.html">
             
                     
                         <b>3.2.</b>
@@ -202,9 +202,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="JUC.html">
+        <li class="chapter " data-level="3.3" data-path="../并发/JUC.html">
             
-                <a href="JUC.html">
+                <a href="../并发/JUC.html">
             
                     
                         <b>3.3.</b>
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="AQS原理.html">
+        <li class="chapter " data-level="3.4" data-path="../并发/AQS原理.html">
             
-                <a href="AQS原理.html">
+                <a href="../并发/AQS原理.html">
             
                     
                         <b>3.4.</b>
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="锁.html">
+        <li class="chapter " data-level="3.5" data-path="../并发/锁.html">
             
-                <a href="锁.html">
+                <a href="../并发/锁.html">
             
                     
                         <b>3.5.</b>
@@ -395,9 +395,9 @@
         
         
     
-        <li class="chapter " data-level="7.1" data-path="../java基础/java基础.html">
+        <li class="chapter " data-level="7.1" data-path="java基础.html">
             
-                <a href="../java基础/java基础.html">
+                <a href="java基础.html">
             
                     
                         <b>7.1.</b>
@@ -410,9 +410,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="../java基础/HashMap.html">
+        <li class="chapter " data-level="7.2" data-path="HashMap.html">
             
-                <a href="../java基础/HashMap.html">
+                <a href="HashMap.html">
             
                     
                         <b>7.2.</b>
@@ -425,9 +425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="../java基础/ConcurrentHashMap.html">
+        <li class="chapter active" data-level="7.3" data-path="ConcurrentHashMap.html">
             
-                <a href="../java基础/ConcurrentHashMap.html">
+                <a href="ConcurrentHashMap.html">
             
                     
                         <b>7.3.</b>
@@ -440,9 +440,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.4" data-path="../java基础/Set.html">
+        <li class="chapter " data-level="7.4" data-path="Set.html">
             
-                <a href="../java基础/Set.html">
+                <a href="Set.html">
             
                     
                         <b>7.4.</b>
@@ -455,9 +455,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="../java基础/List.html">
+        <li class="chapter " data-level="7.5" data-path="List.html">
             
-                <a href="../java基础/List.html">
+                <a href="List.html">
             
                     
                         <b>7.5.</b>
@@ -894,7 +894,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JUC</a>
+        <a href=".." >ConcurrentHashMap</a>
     </h1>
 </div>
 
@@ -909,15 +909,132 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="juc--&#x7B14;&#x8BB0;">juc  &#x7B14;&#x8BB0;</h1>
-<blockquote>
-<p>juc&#xFF1A; java.util.concurrent.*</p>
+                                <h1 id="concurrenthashmap">ConcurrentHashMap</h1>
+<p>&#x5E95;&#x5C42;&#x5229;&#x7528;<a href="../java&#x7EBF;&#x7A0B;/ReentrantLock.html">ReentrantLock</a>&#x5B9E;&#x73B0;</p>
+<h1 id="jdk-17-&#x5B9E;&#x73B0;">jdk 1.7 &#x5B9E;&#x73B0;</h1>
+<p><img src="ConcurrentHashMap.png" alt="CurrentHashMap"></p>
+<p>&#x5229;&#x7528;segment&#x548C;hashEntry&#x5B9E;&#x73B0;&#xFF0C;segment&#x7EE7;&#x627F;ReentrantLock</p>
+<p>&#x5148;hash&#x4E00;&#x6B21;&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x7684;segment&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x4E00;&#x6B21;hash&#xFF0C;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;hashEntry</p>
+<h2 id="get&#x65B9;&#x6CD5;">get&#x65B9;&#x6CD5;</h2>
+<p>ConcurrentHashMap &#x7684; get &#x65B9;&#x6CD5;&#x662F;&#x975E;&#x5E38;&#x9AD8;&#x6548;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x52A0;&#x9501;&#x3002;</p>
+<p>&#x53EA;&#x9700;&#x8981;&#x5C06;<code>Key</code>&#x901A;&#x8FC7;<code>Hash</code>&#x4E4B;&#x540E;&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;<code>Segment</code>&#xFF0C;
+&#x518D;&#x901A;&#x8FC7;&#x4E00;&#x6B21;<code>Hash</code>&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x5143;&#x7D20;&#x4E0A;&#x3002;
+&#x7531;&#x4E8E;<code>HashEntry</code>&#x4E2D;&#x7684;<code>value</code>&#x5C5E;&#x6027;&#x662F;&#x7528;<code>volatile</code>&#x5173;&#x952E;&#x8BCD;&#x4FEE;&#x9970;&#x7684;&#xFF0C;
+&#x4FDD;&#x8BC1;&#x4E86;&#x5185;&#x5B58;&#x53EF;&#x89C1;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x6B21;&#x83B7;&#x53D6;&#x65F6;&#x90FD;&#x662F;&#x6700;&#x65B0;&#x503C;</p>
+<h2 id="put-&#x65B9;&#x6CD5;">put &#x65B9;&#x6CD5;</h2>
+<p>&#x9996;&#x5148;&#x4E5F;&#x662F;&#x901A;&#x8FC7; Key &#x7684; Hash &#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684; Segment&#xFF0C;&#x5728; put &#x4E4B;&#x524D;&#x4F1A;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x6269;&#x5BB9;&#x6821;&#x9A8C;
+volatile&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x539F;&#x5B50;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x8981;&#x52A0;&#x9501;</p>
+<h1 id="jdk-18-&#x5B9E;&#x73B0;">jdk 1.8 &#x5B9E;&#x73B0;</h1>
+<p>jdk 1.8 &#x91CD;&#x65B0;&#x542F;&#x52A8;synchronized+CAS&#x5B9E;&#x73B0;</p>
+<ul>
+<li><blockquote>
+<p>CAS </p>
 </blockquote>
-<h1 id="juc-atomic">juc atomic</h1>
-<p>&#x5229;&#x7528;CAS&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;</p>
-<p>AtomicInteger</p>
-<h1 id="juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;">juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;</h1>
-<p>&#x53C2;&#x8003;[<a href="https://blog.csdn.net/china_wanglong/article/details/38828407" target="_blank">https://blog.csdn.net/china_wanglong/article/details/38828407</a>]</p>
+<p>  CompareAndSwap or CompareAndSet</p>
+<h1 id="put&#x65B9;&#x6CD5;">put&#x65B9;&#x6CD5;</h1>
+<pre><code class="lang-java">  <span class="hljs-function"><span class="hljs-keyword">final</span> V <span class="hljs-title">putVal</span><span class="hljs-params">(K key, V value, <span class="hljs-keyword">boolean</span> onlyIfAbsent)</span> </span>{
+          <span class="hljs-keyword">if</span> (key != <span class="hljs-keyword">null</span> &amp;&amp; value != <span class="hljs-keyword">null</span>) {
+              <span class="hljs-keyword">int</span> hash = spread(key.hashCode());
+              <span class="hljs-keyword">int</span> binCount = <span class="hljs-number">0</span>;
+              ConcurrentHashMap.Node[] tab = <span class="hljs-keyword">this</span>.table;
+
+              <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
+                  <span class="hljs-keyword">int</span> n;
+                  <span class="hljs-keyword">while</span>(tab == <span class="hljs-keyword">null</span> || (n = tab.length) == <span class="hljs-number">0</span>) {
+                      tab = <span class="hljs-keyword">this</span>.initTable(); 
+                  }
+
+                  ConcurrentHashMap.Node f;
+                  <span class="hljs-keyword">int</span> i;
+                  <span class="hljs-keyword">if</span> ((f = tabAt(tab, i = n - <span class="hljs-number">1</span> &amp; hash)) == <span class="hljs-keyword">null</span>) {
+                      <span class="hljs-keyword">if</span> (casTabAt(tab, i, (ConcurrentHashMap.Node)<span class="hljs-keyword">null</span>, <span class="hljs-keyword">new</span> ConcurrentHashMap.Node(hash, key, value))) {
+                          <span class="hljs-keyword">break</span>;
+                      }
+                  } <span class="hljs-keyword">else</span> {
+                      <span class="hljs-keyword">int</span> fh;
+                      <span class="hljs-keyword">if</span> ((fh = f.hash) == -<span class="hljs-number">1</span>) {
+                          tab = <span class="hljs-keyword">this</span>.helpTransfer(tab, f);
+                      } <span class="hljs-keyword">else</span> {
+                          Object fk;
+                          Object fv;
+                          <span class="hljs-keyword">if</span> (onlyIfAbsent &amp;&amp; fh == hash &amp;&amp; ((fk = f.key) == key || fk != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(fk)) &amp;&amp; (fv = f.val) != <span class="hljs-keyword">null</span>) {
+                              <span class="hljs-keyword">return</span> fv;
+                          }
+
+                          V oldVal = <span class="hljs-keyword">null</span>;
+                          <span class="hljs-keyword">synchronized</span>(f) {
+                              <span class="hljs-keyword">if</span> (tabAt(tab, i) == f) {
+                                  <span class="hljs-keyword">if</span> (fh &lt; <span class="hljs-number">0</span>) {
+                                      <span class="hljs-keyword">if</span> (f <span class="hljs-keyword">instanceof</span> ConcurrentHashMap.TreeBin) {
+                                          binCount = <span class="hljs-number">2</span>;
+                                          ConcurrentHashMap.TreeNode p;
+                                          <span class="hljs-keyword">if</span> ((p = ((ConcurrentHashMap.TreeBin)f).putTreeVal(hash, key, value)) != <span class="hljs-keyword">null</span>) {
+                                              oldVal = p.val;
+                                              <span class="hljs-keyword">if</span> (!onlyIfAbsent) {
+                                                  p.val = value;
+                                              }
+                                          }
+                                      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (f <span class="hljs-keyword">instanceof</span> ConcurrentHashMap.ReservationNode) {
+                                          <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Recursive update&quot;</span>);
+                                      }
+                                  } <span class="hljs-keyword">else</span> {
+                                      label124: {
+                                          binCount = <span class="hljs-number">1</span>;
+
+                                          ConcurrentHashMap.Node e;
+                                          Object ek;
+                                          <span class="hljs-keyword">for</span>(e = f; e.hash != hash || (ek = e.key) != key &amp;&amp; (ek == <span class="hljs-keyword">null</span> || !key.equals(ek)); ++binCount) {
+                                              ConcurrentHashMap.Node&lt;K, V&gt; pred = e;
+                                              <span class="hljs-keyword">if</span> ((e = e.next) == <span class="hljs-keyword">null</span>) {
+                                                  pred.next = <span class="hljs-keyword">new</span> ConcurrentHashMap.Node(hash, key, value);
+                                                  <span class="hljs-keyword">break</span> label124;
+                                              }
+                                          }
+
+                                          oldVal = e.val;
+                                          <span class="hljs-keyword">if</span> (!onlyIfAbsent) {
+                                              e.val = value;
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+
+                          <span class="hljs-keyword">if</span> (binCount != <span class="hljs-number">0</span>) {
+                              <span class="hljs-keyword">if</span> (binCount &gt;= <span class="hljs-number">8</span>) {
+                                  <span class="hljs-keyword">this</span>.treeifyBin(tab, i);
+                              }
+
+                              <span class="hljs-keyword">if</span> (oldVal != <span class="hljs-keyword">null</span>) {
+                                  <span class="hljs-keyword">return</span> oldVal;
+                              }
+                              <span class="hljs-keyword">break</span>;
+                          }
+                      }
+                  }
+              }
+
+              <span class="hljs-keyword">this</span>.addCount(<span class="hljs-number">1L</span>, binCount);
+              <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+          } <span class="hljs-keyword">else</span> {
+              <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+          }
+      }
+</code></pre>
+<ul>
+<li>&#x6839;&#x636E; key &#x8BA1;&#x7B97;&#x51FA; hashcode &#x3002;</li>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</li>
+<li>f &#x5373;&#x4E3A;&#x5F53;&#x524D; key &#x5B9A;&#x4F4D;&#x51FA;&#x7684; Node&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x8868;&#x793A;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5229;&#x7528; CAS &#x5C1D;&#x8BD5;&#x5199;&#x5165;&#xFF0C;&#x5931;&#x8D25;&#x5219;&#x81EA;&#x65CB;&#x4FDD;&#x8BC1;&#x6210;&#x529F;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x7684; hashcode == MOVED == -1,&#x5219;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6269;&#x5BB9;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x90FD;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;&#x5229;&#x7528; synchronized &#x9501;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6570;&#x91CF;&#x5927;&#x4E8E; TREEIFY_THRESHOLD &#x5219;&#x8981;&#x8F6C;&#x6362;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;</li>
+</ul>
+</li>
+</ul>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>1.8 &#x5728; 1.7 &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0A;&#x505A;&#x4E86;&#x5927;&#x7684;&#x6539;&#x52A8;&#xFF0C;
+&#x91C7;&#x7528;&#x7EA2;&#x9ED1;&#x6811;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#xFF08;O(logn)&#xFF09;&#xFF0C;
+&#x751A;&#x81F3;&#x53D6;&#x6D88;&#x4E86; ReentrantLock &#x6539;&#x4E3A;&#x4E86; synchronized</p>
 
                                 
                                 </section>
@@ -945,12 +1062,12 @@
 
             
                 
-                <a href="CAS.html" class="navigation navigation-prev " aria-label="Previous page: CAS">
+                <a href="HashMap.html" class="navigation navigation-prev " aria-label="Previous page: HashMap">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="AQS原理.html" class="navigation navigation-next " aria-label="Next page: AQS">
+                <a href="Set.html" class="navigation navigation-next " aria-label="Next page: Set">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -961,7 +1078,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JUC","level":"3.3","depth":1,"next":{"title":"AQS","level":"3.4","depth":1,"path":"并发/AQS原理.md","ref":"并发/AQS原理.md","articles":[]},"previous":{"title":"CAS","level":"3.2","depth":1,"path":"并发/CAS.md","ref":"并发/CAS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"并发/JUC.md","mtime":"2019-04-19T06:11:10.429Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ConcurrentHashMap","level":"7.3","depth":1,"next":{"title":"Set","level":"7.4","depth":1,"path":"java基础/Set.md","ref":"java基础/Set.md","articles":[]},"previous":{"title":"HashMap","level":"7.2","depth":1,"path":"java基础/HashMap.md","ref":"java基础/HashMap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"java基础/ConcurrentHashMap.md","mtime":"2019-04-15T06:01:13.731Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JUC · java学习</title>
+        <title>Set · java学习</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -55,10 +55,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="AQS原理.html" />
+    <link rel="next" href="List.html" />
     
     
-    <link rel="prev" href="CAS.html" />
+    <link rel="prev" href="ConcurrentHashMap.html" />
     
 
     </head>
@@ -172,9 +172,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="乐观锁与悲观锁.html">
+        <li class="chapter " data-level="3.1" data-path="../并发/乐观锁与悲观锁.html">
             
-                <a href="乐观锁与悲观锁.html">
+                <a href="../并发/乐观锁与悲观锁.html">
             
                     
                         <b>3.1.</b>
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="CAS.html">
+        <li class="chapter " data-level="3.2" data-path="../并发/CAS.html">
             
-                <a href="CAS.html">
+                <a href="../并发/CAS.html">
             
                     
                         <b>3.2.</b>
@@ -202,9 +202,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="JUC.html">
+        <li class="chapter " data-level="3.3" data-path="../并发/JUC.html">
             
-                <a href="JUC.html">
+                <a href="../并发/JUC.html">
             
                     
                         <b>3.3.</b>
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="AQS原理.html">
+        <li class="chapter " data-level="3.4" data-path="../并发/AQS原理.html">
             
-                <a href="AQS原理.html">
+                <a href="../并发/AQS原理.html">
             
                     
                         <b>3.4.</b>
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="锁.html">
+        <li class="chapter " data-level="3.5" data-path="../并发/锁.html">
             
-                <a href="锁.html">
+                <a href="../并发/锁.html">
             
                     
                         <b>3.5.</b>
@@ -395,9 +395,9 @@
         
         
     
-        <li class="chapter " data-level="7.1" data-path="../java基础/java基础.html">
+        <li class="chapter " data-level="7.1" data-path="java基础.html">
             
-                <a href="../java基础/java基础.html">
+                <a href="java基础.html">
             
                     
                         <b>7.1.</b>
@@ -410,9 +410,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="../java基础/HashMap.html">
+        <li class="chapter " data-level="7.2" data-path="HashMap.html">
             
-                <a href="../java基础/HashMap.html">
+                <a href="HashMap.html">
             
                     
                         <b>7.2.</b>
@@ -425,9 +425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="../java基础/ConcurrentHashMap.html">
+        <li class="chapter " data-level="7.3" data-path="ConcurrentHashMap.html">
             
-                <a href="../java基础/ConcurrentHashMap.html">
+                <a href="ConcurrentHashMap.html">
             
                     
                         <b>7.3.</b>
@@ -440,9 +440,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.4" data-path="../java基础/Set.html">
+        <li class="chapter active" data-level="7.4" data-path="Set.html">
             
-                <a href="../java基础/Set.html">
+                <a href="Set.html">
             
                     
                         <b>7.4.</b>
@@ -455,9 +455,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="../java基础/List.html">
+        <li class="chapter " data-level="7.5" data-path="List.html">
             
-                <a href="../java基础/List.html">
+                <a href="List.html">
             
                     
                         <b>7.5.</b>
@@ -894,7 +894,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JUC</a>
+        <a href=".." >Set</a>
     </h1>
 </div>
 
@@ -909,15 +909,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="juc--&#x7B14;&#x8BB0;">juc  &#x7B14;&#x8BB0;</h1>
-<blockquote>
-<p>juc&#xFF1A; java.util.concurrent.*</p>
-</blockquote>
-<h1 id="juc-atomic">juc atomic</h1>
-<p>&#x5229;&#x7528;CAS&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;</p>
-<p>AtomicInteger</p>
-<h1 id="juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;">juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;</h1>
-<p>&#x53C2;&#x8003;[<a href="https://blog.csdn.net/china_wanglong/article/details/38828407" target="_blank">https://blog.csdn.net/china_wanglong/article/details/38828407</a>]</p>
+                                <h1 id="set&#x96C6;&#x5408;">Set&#x96C6;&#x5408;</h1>
+<p>&#x65E0;&#x5E8F;&#x4E14;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x7684;&#x96C6;&#x5408;,&#x7EE7;&#x627F;Collection &#x63A5;&#x53E3;, &#x5B9E;&#x73B0;&#x7C7B;: HashSet(&#x662F;&#x4E00;&#x4E2A;&#x53EA;&#x6709;Key&#x7684;HashMap&#xFF09;</p>
+<h1 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h1>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashSet</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> HashMap();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashSet</span><span class="hljs-params">(Collection&lt;? extends E&gt; c)</span> </span>{
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> HashMap(Math.max((<span class="hljs-keyword">int</span>)((<span class="hljs-keyword">float</span>)c.size() / <span class="hljs-number">0.75F</span>) + <span class="hljs-number">1</span>, <span class="hljs-number">16</span>));
+        <span class="hljs-keyword">this</span>.addAll(c);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity, <span class="hljs-keyword">float</span> loadFactor)</span> </span>{
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> HashMap(initialCapacity, loadFactor);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HashSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity)</span> </span>{
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> HashMap(initialCapacity);
+    }
+
+    HashSet(<span class="hljs-keyword">int</span> initialCapacity, <span class="hljs-keyword">float</span> loadFactor, <span class="hljs-keyword">boolean</span> dummy) {
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> LinkedHashMap(initialCapacity, loadFactor);
+    }
+</code></pre>
+<p>&#x521B;&#x5EFA;HashSet&#x7684;&#x8FC7;&#x7A0B;&#x5B9E;&#x9645;&#x5728;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x662F;&#x8C03;&#x7528;HashMap&#x7684;&#x521D;&#x59CB;&#x5316;
+&#x8FC7;&#x7A0B;&#xFF0C;&#x7531;&#x4E8E;HashMap&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x91CD;&#x590D;&#x7684;key&#x503C;&#xFF0C;&#x6240;&#x4EE5;Set&#x6CA1;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;</p>
+<h1 id="add&#x65B9;&#x6CD5;">add&#x65B9;&#x6CD5;</h1>
+<pre><code>public boolean add(E e) {
+        return this.map.put(e, PRESENT) == null;
+    }
+</code></pre><p>&#x7531;&#x4E8E;<code>HashMap</code>&#x7684;<code>key</code>&#x662F;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x5F53;&#x6709;&#x91CD;&#x590D;&#x7684;&#x503C;&#x5199;&#x5165;&#x5230;<code>HashSet</code>&#x65F6;&#xFF0C;
+<code>value</code>&#x4F1A;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x4F46;<code>key</code>&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;<code>HashSet</code>&#x4E2D;&#x53EA;&#x80FD;&#x5B58;&#x653E;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
 
                                 
                                 </section>
@@ -945,12 +968,12 @@
 
             
                 
-                <a href="CAS.html" class="navigation navigation-prev " aria-label="Previous page: CAS">
+                <a href="ConcurrentHashMap.html" class="navigation navigation-prev " aria-label="Previous page: ConcurrentHashMap">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="AQS原理.html" class="navigation navigation-next " aria-label="Next page: AQS">
+                <a href="List.html" class="navigation navigation-next " aria-label="Next page: List">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -961,7 +984,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JUC","level":"3.3","depth":1,"next":{"title":"AQS","level":"3.4","depth":1,"path":"并发/AQS原理.md","ref":"并发/AQS原理.md","articles":[]},"previous":{"title":"CAS","level":"3.2","depth":1,"path":"并发/CAS.md","ref":"并发/CAS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"并发/JUC.md","mtime":"2019-04-19T06:11:10.429Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Set","level":"7.4","depth":1,"next":{"title":"List","level":"7.5","depth":1,"path":"java基础/List.md","ref":"java基础/List.md","articles":[]},"previous":{"title":"ConcurrentHashMap","level":"7.3","depth":1,"path":"java基础/ConcurrentHashMap.md","ref":"java基础/ConcurrentHashMap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"java基础/Set.md","mtime":"2019-04-06T12:36:48.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JUC · java学习</title>
+        <title>List · java学习</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -55,10 +55,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="AQS原理.html" />
+    <link rel="next" href="../java线程/java多线程.html" />
     
     
-    <link rel="prev" href="CAS.html" />
+    <link rel="prev" href="Set.html" />
     
 
     </head>
@@ -172,9 +172,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="乐观锁与悲观锁.html">
+        <li class="chapter " data-level="3.1" data-path="../并发/乐观锁与悲观锁.html">
             
-                <a href="乐观锁与悲观锁.html">
+                <a href="../并发/乐观锁与悲观锁.html">
             
                     
                         <b>3.1.</b>
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="CAS.html">
+        <li class="chapter " data-level="3.2" data-path="../并发/CAS.html">
             
-                <a href="CAS.html">
+                <a href="../并发/CAS.html">
             
                     
                         <b>3.2.</b>
@@ -202,9 +202,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="JUC.html">
+        <li class="chapter " data-level="3.3" data-path="../并发/JUC.html">
             
-                <a href="JUC.html">
+                <a href="../并发/JUC.html">
             
                     
                         <b>3.3.</b>
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.4" data-path="AQS原理.html">
+        <li class="chapter " data-level="3.4" data-path="../并发/AQS原理.html">
             
-                <a href="AQS原理.html">
+                <a href="../并发/AQS原理.html">
             
                     
                         <b>3.4.</b>
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.5" data-path="锁.html">
+        <li class="chapter " data-level="3.5" data-path="../并发/锁.html">
             
-                <a href="锁.html">
+                <a href="../并发/锁.html">
             
                     
                         <b>3.5.</b>
@@ -395,9 +395,9 @@
         
         
     
-        <li class="chapter " data-level="7.1" data-path="../java基础/java基础.html">
+        <li class="chapter " data-level="7.1" data-path="java基础.html">
             
-                <a href="../java基础/java基础.html">
+                <a href="java基础.html">
             
                     
                         <b>7.1.</b>
@@ -410,9 +410,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="../java基础/HashMap.html">
+        <li class="chapter " data-level="7.2" data-path="HashMap.html">
             
-                <a href="../java基础/HashMap.html">
+                <a href="HashMap.html">
             
                     
                         <b>7.2.</b>
@@ -425,9 +425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="../java基础/ConcurrentHashMap.html">
+        <li class="chapter " data-level="7.3" data-path="ConcurrentHashMap.html">
             
-                <a href="../java基础/ConcurrentHashMap.html">
+                <a href="ConcurrentHashMap.html">
             
                     
                         <b>7.3.</b>
@@ -440,9 +440,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.4" data-path="../java基础/Set.html">
+        <li class="chapter " data-level="7.4" data-path="Set.html">
             
-                <a href="../java基础/Set.html">
+                <a href="Set.html">
             
                     
                         <b>7.4.</b>
@@ -455,9 +455,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="../java基础/List.html">
+        <li class="chapter active" data-level="7.5" data-path="List.html">
             
-                <a href="../java基础/List.html">
+                <a href="List.html">
             
                     
                         <b>7.5.</b>
@@ -894,7 +894,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JUC</a>
+        <a href=".." >List</a>
     </h1>
 </div>
 
@@ -909,15 +909,98 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="juc--&#x7B14;&#x8BB0;">juc  &#x7B14;&#x8BB0;</h1>
-<blockquote>
-<p>juc&#xFF1A; java.util.concurrent.*</p>
-</blockquote>
-<h1 id="juc-atomic">juc atomic</h1>
-<p>&#x5229;&#x7528;CAS&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;</p>
-<p>AtomicInteger</p>
-<h1 id="juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;">juc&#x5305;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7C7B;</h1>
-<p>&#x53C2;&#x8003;[<a href="https://blog.csdn.net/china_wanglong/article/details/38828407" target="_blank">https://blog.csdn.net/china_wanglong/article/details/38828407</a>]</p>
+                                <h1 id="arraylist">ArrayList</h1>
+<h1 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h1>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ArrayList</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity)</span> </span>{
+        <span class="hljs-keyword">if</span> (initialCapacity &gt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.elementData = <span class="hljs-keyword">new</span> Object[initialCapacity];
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (initialCapacity != <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Illegal Capacity: &quot;</span> + initialCapacity);
+            }
+
+            <span class="hljs-keyword">this</span>.elementData = EMPTY_ELEMENTDATA;
+        }
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ArrayList</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+    }
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x521D;&#x59CB;&#x5316;&#x6216;&#x8005;&#x9ED8;&#x8BA4;&#x4EE5;10&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;</p>
+<h1 id="add-&#x65B9;&#x6CD5;">add &#x65B9;&#x6CD5;</h1>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E e, Object[] elementData, <span class="hljs-keyword">int</span> s)</span> </span>{
+        <span class="hljs-keyword">if</span> (s == elementData.length) {
+            elementData = <span class="hljs-keyword">this</span>.grow();
+        }
+
+        elementData[s] = e;
+        <span class="hljs-keyword">this</span>.size = s + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">add</span><span class="hljs-params">(E e)</span> </span>{
+        ++<span class="hljs-keyword">this</span>.modCount;
+        <span class="hljs-keyword">this</span>.add(e, <span class="hljs-keyword">this</span>.elementData, <span class="hljs-keyword">this</span>.size);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+</code></pre>
+<p>&#x5728;<code>add</code>&#x64CD;&#x4F5C;&#x524D;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x6269;&#x5BB9; size+1 
+<code>modCount</code>&#x6210;&#x54E1;&#x8B8A;&#x91CF;&#x8A18;&#x9304;&#x7740;&#x96C6;&#x5408;&#x7684;&#x4FEE;&#x6539;&#x6B21;&#x6570;&#xFF0C;&#x4E5F;&#x5C31;&#x6BCF;&#x6B21;add&#x6216;&#x8005;remove&#x5B83;&#x7684;&#x503C;&#x90FD;&#x4F1A;&#x52A0;1
+&#x4FDD;&#x8BC1;&#x5728;Iterator&#x904D;&#x5386;&#x96C6;&#x5408;&#x65F6;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;remove&#xFF0C;add&#x7B49;&#x64CD;&#x4F5C;&#x3002;
+<strong>&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x7684;&#x6269;&#x5BB9;&#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code>    private Object[] grow(int minCapacity) {
+        return this.elementData = Arrays.copyOf(this.elementData, this.newCapacity(minCapacity));
+    }
+
+    private Object[] grow() {
+        return this.grow(this.size + 1);
+    }
+
+    private int newCapacity(int minCapacity) {
+        int oldCapacity = this.elementData.length;
+        int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);//1.5&#x500D;&#x6269;&#x5BB9;
+        if (newCapacity - minCapacity &lt;= 0) {
+            if (this.elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+                return Math.max(10, minCapacity);
+            } else if (minCapacity &lt; 0) {
+                throw new OutOfMemoryError();
+            } else {
+                return minCapacity;
+            }
+        } else {
+            return newCapacity - 2147483639 &lt;= 0 ? newCapacity : hugeCapacity(minCapacity);
+        }
+    }
+</code></pre><h1 id="&#x5E8F;&#x5217;&#x5316;">&#x5E8F;&#x5217;&#x5316;</h1>
+<p>  &#x7531;&#x4E8E; ArrayList &#x662F;&#x57FA;&#x4E8E;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x7A7A;&#x95F4;&#x90FD;&#x88AB;&#x4F7F;&#x7528;&#x3002;
+  &#x56E0;&#x6B64;&#x4F7F;&#x7528;&#x4E86; transient &#x4FEE;&#x9970;&#xFF0C;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x88AB;&#x81EA;&#x52A8;&#x5E8F;&#x5217;&#x5316;&#x3002;&#x91CD;&#x5199;writeObject&#x65B9;&#x6CD5;</p>
+<pre><code> transient Object[] elementData;
+</code></pre><h2 id="concurrentmodificationexception-&#x51FA;&#x73B0;&#x539F;&#x56E0;">ConcurrentModificationException &#x51FA;&#x73B0;&#x539F;&#x56E0;</h2>
+<pre><code>&#x5BF9;Vector&#x3001;ArrayList&#x5728;&#x8FED;&#x4EE3;&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x540C;&#x65F6;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x5C31;&#x4F1A;&#x629B;&#x51FA;
+java.util.ConcurrentModificationException&#x5F02;&#x5E38;
+</code></pre><h2 id="modcount">modCount</h2>
+<p>expectedModCount</p>
+<ul>
+<li>&#x8BE5;&#x503C;&#x8868;&#x793A;&#x5BF9;List&#x7684;&#x4FEE;&#x6539;&#x6B21;&#x6570;&#xFF0C;&#x67E5;&#x770B;ArrayList&#x7684;add()&#x548C;remove()&#x65B9;&#x6CD5;</li>
+<li>&#x6BCF;&#x6B21;&#x8C03;&#x7528;add()&#x65B9;&#x6CD5;&#x6216;&#x8005;remove()&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x5BF9;modCount&#x8FDB;&#x884C;&#x52A0;1&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x5728; Iterator&#x4E2D; &#x4E2D;&#x7684;hasNext&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x90FD;&#x4F1A;&#x6709;checkForComodification()
+&#x5982;&#x679C; modCount &#xFF01;= expectedModCount &#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E0A;&#x9762;&#x5F02;&#x5E38;</li>
+<li>iterator.remove();&#x5728;&#x5FAA;&#x73AF;&#x4E2D;&#x8C03;&#x7528;&#x65F6;&#x5E76;&#x4E0D;&#x4F1A;&#x51FA;&#x9519;<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>  </span>{
+      ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+      list.add(<span class="hljs-number">2</span>);
+      Iterator&lt;Integer&gt; iterator = list.iterator();
+      <span class="hljs-keyword">while</span>(iterator.hasNext()){
+          Integer integer = iterator.next();
+          <span class="hljs-keyword">if</span>(integer==<span class="hljs-number">2</span>)
+              iterator.remove();   <span class="hljs-comment">//&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;</span>
+      }
+  }
+}
+</code></pre>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -945,12 +1028,12 @@
 
             
                 
-                <a href="CAS.html" class="navigation navigation-prev " aria-label="Previous page: CAS">
+                <a href="Set.html" class="navigation navigation-prev " aria-label="Previous page: Set">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="AQS原理.html" class="navigation navigation-next " aria-label="Next page: AQS">
+                <a href="../java线程/java多线程.html" class="navigation navigation-next " aria-label="Next page: 线程池">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -961,7 +1044,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JUC","level":"3.3","depth":1,"next":{"title":"AQS","level":"3.4","depth":1,"path":"并发/AQS原理.md","ref":"并发/AQS原理.md","articles":[]},"previous":{"title":"CAS","level":"3.2","depth":1,"path":"并发/CAS.md","ref":"并发/CAS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"并发/JUC.md","mtime":"2019-04-19T06:11:10.429Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"List","level":"7.5","depth":1,"next":{"title":"线程池","level":"8.1","depth":1,"path":"java线程/java多线程.md","ref":"java线程/java多线程.md","articles":[]},"previous":{"title":"Set","level":"7.4","depth":1,"path":"java基础/Set.md","ref":"java基础/Set.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"java基础/List.md","mtime":"2019-04-15T07:31:44.445Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-29T07:57:48.659Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

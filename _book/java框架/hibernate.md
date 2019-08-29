@@ -1,2 +1,0 @@
-# hibernate 笔记
-- 
