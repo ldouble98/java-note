@@ -18,6 +18,7 @@
   + [CAS](并发/CAS.md)
   + [JUC](并发/JUC.md)
   + [AQS](并发/AQS原理.md)
+  + [锁](并发/锁.md)
 
 #    
    ## 分布式     
@@ -34,8 +35,8 @@
    + [类加载机制](java/jvm/类加载机制.md)
    + [对象的创建与内存分配](java/jvm/对象的创建与内存分配.md)
    + [jvm标准](java/jvm/jvm标准.md)
-   + [垃圾回收器](java/jvm/垃圾收集器.md)
-   + [GC](java/jvm/GC.md)
+   ++ [7种垃圾收集器](java/jvm/垃圾收集器.md)
+   + [GC垃圾回收](java/jvm/GC.md)
 
 #
    ## java 基础
@@ -80,6 +81,10 @@
    - [http请求](network/http.md)
    - [Tcp](network/TCP三次协议.md)
 
+# 
+   ## git 
+   - [git笔记](git/gitnote.md)
+   
 # 
    ## 面试经验
    - [interview](面试经验/interview.md)
