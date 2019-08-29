@@ -1,4 +1,4 @@
-Java基础
+
 1. 九种基本数据类型的大小,以及他们的封装类
         
         boolean
@@ -9,26 +9,38 @@ Java基础
               Short
         
 2. Switch可以用的参数种类.
+A switch works with the `byte`, `short`, `char`, and `int` primitive data types. It also works with `enumerated types` 
+(discussed in EnumTypes), the `String` class, and a few special classes that wrap certain primitive types: `Character`, 
+`Byte`, `Short`, and `Integer`(discussed in Numbers and Strings).
 
-        A switch works with the byte, short, char, and 
-        int primitive data types. It also works 
-        with enumerated types (discussed in Enum
-        Types), the String class, and a few special classes 
-        that wrap certain primitive types: 
-        Character, Byte, Short, and Integer
-        (discussed in Numbers and Strings).
 3. Object有哪些公用方法?
         
         wait(),notify(),notifyAll(),clone(),toString(),equals()
         hashcode()
 4. HTTP缓存.
         
-        
 5. Java的四种引用,强弱软虚,用到的场景.
 6. Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.
+    
+    详见[HashMap](../java基础/HashMap.md)
+        
+        HashCode的作用主要是用来提高查询效率。
+        原理哈希函数：个类有相同的HashCode，例如9除以8和17除以8的余数都是1，也就是说，我们先通过 HashCode来判断两个类是否存放某个桶里，
+            但这个桶里可能有很多类，那么我们就需要再通过equals在这个桶里找到我们要的类。
+        处理冲突的方法：开放定址法————线性探测、二次探测。  
+                      链地址法
+    负载情况达到负载因子水平的时候，容器会自动扩容，HashMap默认使用的`负载因子值`为`0.75f`
+    采用`&`运算会提高性能
+    通过限制`length`是一个`2`的幂数，h & (length-1)和h % length结果是一致的
+    
+    
 7. ArrayList,LinkedList,Vector的区别.
         
-        
+        ArrayList:数组集合，可变数组，当更多的元素添加到ArrayList的时候，它的大小会动态增大。有序，可以通过
+            get(),set()方法获取元素。当需要插入大量元素时，在插入前可以调用ensureCapacity方法来增加
+            ArrayList的容量以提高插入效率。
+        LinkedList：链表集合。添加、删除元素的性能比ArrayList好，但是get/set元素的性能较差。
+        Vector:线程安全的 add() 方法的时候使用 synchronized 进行同步写数据
 8. String,StringBuffer与StringBuilder的区别.
 9. Map,Set,List,Queue,Stack的特点与用法.
 10. HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别.
