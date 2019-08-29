@@ -10,7 +10,7 @@
 
 #   
    ## citicbank   
-   + [citicbank](citicbank/张科老师学习知识点.md)
+   + [citicbank](citicbank/citicbank学习知识点.md)
    
 #   
    ## java并发     

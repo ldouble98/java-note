@@ -1,5 +1,5 @@
 
-1. 九种基本数据类型的大小,以及他们的封装类
+1. **八种基本数据类型的大小,以及他们的封装类**
         
         boolean
         Boolean
@@ -8,19 +8,20 @@
         Byte -Character-Integer-Long-Float-Double
               Short
         
-2. Switch可以用的参数种类.
+2. **Switch可以用的参数种类.**
+
 A switch works with the `byte`, `short`, `char`, and `int` primitive data types. It also works with `enumerated types` 
 (discussed in EnumTypes), the `String` class, and a few special classes that wrap certain primitive types: `Character`, 
 `Byte`, `Short`, and `Integer`(discussed in Numbers and Strings).
 
-3. Object有哪些公用方法?
+3. **Object有哪些公用方法?**
         
         wait(),notify(),notifyAll(),clone(),toString(),equals()
         hashcode()
-4. HTTP缓存.
+4. **HTTP缓存.**
         
-5. Java的四种引用,强弱软虚,用到的场景.
-6. Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.
+5. **Java的四种引用,强弱软虚,用到的场景.**
+6. **Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.**
     
     详见[HashMap](../java基础/HashMap.md)
         
@@ -29,28 +30,61 @@ A switch works with the `byte`, `short`, `char`, and `int` primitive data types.
             但这个桶里可能有很多类，那么我们就需要再通过equals在这个桶里找到我们要的类。
         处理冲突的方法：开放定址法————线性探测、二次探测。  
                       链地址法
-    负载情况达到负载因子水平的时候，容器会自动扩容，HashMap默认使用的`负载因子值`为`0.75f`
+    >负载情况达到负载因子水平的时候，容器会自动扩容，HashMap默认使用的`负载因子值`为`0.75f`
     采用`&`运算会提高性能
     通过限制`length`是一个`2`的幂数，h & (length-1)和h % length结果是一致的
+    我们在扩充HashMap的时候，不需要像JDK1.7的实现那样重新计算hash，只需要看看原来的hash值新增的那个`bit`是1还是0就好了，是0的话索引没变，
+    是1的话索引变成`原索引+oldCap`
     
-    
-7. ArrayList,LinkedList,Vector的区别.
+7. **ArrayList,LinkedList,Vector的区别.**
         
         ArrayList:数组集合，可变数组，当更多的元素添加到ArrayList的时候，它的大小会动态增大。有序，可以通过
             get(),set()方法获取元素。当需要插入大量元素时，在插入前可以调用ensureCapacity方法来增加
             ArrayList的容量以提高插入效率。
         LinkedList：链表集合。添加、删除元素的性能比ArrayList好，但是get/set元素的性能较差。
         Vector:线程安全的 add() 方法的时候使用 synchronized 进行同步写数据
-8. String,StringBuffer与StringBuilder的区别.
+8. **String,StringBuffer与StringBuilder的区别**.
+    
+    >String 字符串常量 
+    StringBuffer 字符串变量（线程安全） 
+    StringBuilder 字符串变量（非线程安全） 
+    String是对象不是原始类型为不可变对象，一旦创建就不能修改它的值 
+    对于已经存在的String的对象的修改都是重新创建一个新的对象，然后把值保存进去（旧的值会被回收）。String是final类，不能被继承 
+    StringBuffer和StringBuilder是一个可变对象，它只能通过构造函数来建立。 
+    1.如果要操作少量的数据用 = String 
+    2.单线程操作字符串缓冲区 下操作大量数据 = StringBuilder 
+    3.多线程操作字符串缓冲区 下操作大量数据 = StringBuffer
+    
 9. Map,Set,List,Queue,Stack的特点与用法.
 10. HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别.
 11. HashMap和ConcurrentHashMap的区别,HashMap的底层源码.
 12. TreeMap,HashMap,LindedHashMap的区别.
 13. Collection包结构,与Collections的区别.
+        
+        Collections是针对集合类的一个帮助类，提供了操作集合的工具方法
+        Collection是集合类的上级接口，子接口主要有Set 和List。 
+        包结构： Set: HashSet,TreeSet
+                List: ArrayList,LinkList,Vector.
+                 
 14. try catch finally,try里有return,finally还执行么?
+        
+        会执行
+        
 15. Excption与Error包结构.非检查异常你遇到过哪些情况,检查异常你遇到过哪些情况.
+    
+    Exception:RunTimeException(`NullPointerException`,`ArrayIndexOutOfBoundsException`)
+              checkedException(`FileNotFoundException`,`SQLException`)
+    Error:StackOverflowError,OutOfMeMoryError
+    
 16. Java面向对象的三个特征与含义.以及面向对象的五个原则.
+    
+    三个特征：`封装`，`继承`，`多态`
+    
+    五个原则：`单一职责原则`,`开放封闭原则`,`Liskov替换原则`,
+               `依赖倒置原则`,`接口隔离原则`.
+          
 17. Override和Overload的含义去区别.
+
 18. Interface与abstract类的区别,应用场景.
 19. Static class 与non static class的区别.
 20. java多态的实现原理.
