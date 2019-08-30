@@ -18,9 +18,11 @@ A switch works with the `byte`, `short`, `char`, and `int` primitive data types.
         
         wait(),notify(),notifyAll(),clone(),toString(),equals()
         hashcode()
+        
 4. **HTTP缓存.**
         
 5. **Java的四种引用,强弱软虚,用到的场景.**
+
 6. **Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.**
     
     详见[HashMap](../java基础/HashMap.md)
@@ -56,9 +58,26 @@ A switch works with the `byte`, `short`, `char`, and `int` primitive data types.
     3.多线程操作字符串缓冲区 下操作大量数据 = StringBuffer
     
 9. Map,Set,List,Queue,Stack的特点与用法.
+
 10. HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别.
+    ## HashTable
+    ![HashTabl](HashTable.png)
+    ##HashMap
+    ![HashMap](HashMap.png)
+    
+        HashTable直接使用的是hashcode值然后使用除留余数法求出下标位置，而HashMap是使用 Hash值后重新进行了与运算，而且HashTable的
+        扩容时是int newCapacity = (oldCapacity << 1) + 1;，容量变为原来的2n+1，
+        HashMap默认的初始化大小为16。之后每次扩充newThr = oldThr << 1;，容量变为原来的2倍。
+    详细参考[HashMap](../java基础/HashMap.md)
+
+    
+    
 11. HashMap和ConcurrentHashMap的区别,HashMap的底层源码.
+    
+    详细参考[HashMap](../java基础/HashMap.md)
+    [ConcurrentHashMap](../java基础/ConcurrentHashMap.md)
 12. TreeMap,HashMap,LindedHashMap的区别.
+        
 13. Collection包结构,与Collections的区别.
         
         Collections是针对集合类的一个帮助类，提供了操作集合的工具方法

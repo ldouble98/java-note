@@ -5,13 +5,15 @@
    ## Introduction
    + [summary](README.md)
    + [java-note](Book.md)
+
 #
    ## java学习笔记
 
 #   
    ## citicbank   
    + [citicbank](citicbank/citicbank学习知识点.md)
-   
+   + [exam1](citicbank/exam1.md)
+
 #   
    ## java并发     
   + [乐观锁与悲观锁](并发/乐观锁与悲观锁.md)
