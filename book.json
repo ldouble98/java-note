@@ -6,7 +6,18 @@
     "structure": {
         "readme": "README.md"
     },
+    
+	"plugins": [
+		
+    ],
     "pluginsConfig": {
+    	"disqus": {
+            "shortName": "用户名"
+        },
+    	"localized-footer": {
+    		"hline": true,          
+    		"filename": "FOOTER.md" 
+  		},
         "anchor-navigation-ex": {
             "isShowTocTitleIcon": true
         },
