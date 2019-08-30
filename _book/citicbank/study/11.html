@@ -1,0 +1,1340 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HashMap和ConcurrentHashMap的区别,HashMap的底层源码. · java学习</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lixiaoshuang">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="12.html" />
+    
+    
+    <link rel="prev" href="10.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/ldouble98" target="_blank" class="custom-link">github</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://blog.csdn.net/weixin_38190582" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://lxs-shmily.gitbook.io/java-notes/" target="_blank" class="custom-link">笔记</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/li-xiao-shuang-53-63/activities" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Book.html">
+            
+                <a href="../../Book.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    java-note
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">citicbank</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CITIC-SUMMARY.html">
+            
+                <a href="../CITIC-SUMMARY.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    citic-summary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    Switch可以用的参数种类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    Object有哪些公用方法?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    HTTP缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../citicbank/study/6.md">
+            
+                <span>
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    八种基本数据类型的大小,以及他们的封装类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                        <b>2.1.6.</b>
+                    
+                    Switch可以用的参数种类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                        <b>2.1.7.</b>
+                    
+                    Object有哪些公用方法?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                        <b>2.1.8.</b>
+                    
+                    HTTP缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                        <b>2.1.9.</b>
+                    
+                    Java的四种引用,强弱软虚,用到的场景.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                        <b>2.1.10.</b>
+                    
+                    Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                        <b>2.1.11.</b>
+                    
+                    ArrayList,LinkedList,Vector的区别.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                        <b>2.1.12.</b>
+                    
+                    String,StringBuffer与StringBuilder的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                        <b>2.1.13.</b>
+                    
+                    Map,Set,List,Queue,Stack的特点与用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                        <b>2.1.14.</b>
+                    
+                    HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.15" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                        <b>2.1.15.</b>
+                    
+                    HashMap和ConcurrentHashMap的区别,HashMap的底层源码.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                        <b>2.1.16.</b>
+                    
+                    TreeMap,HashMap,LindedHashMap的区别.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                        <b>2.1.17.</b>
+                    
+                    Collection包结构,与Collections的区别.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                        <b>2.1.18.</b>
+                    
+                    try catch finally,try里有return,finally还执行么?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                        <b>2.1.19.</b>
+                    
+                    Excption与Error包结构.非检查异常你遇到过哪些情况,检查异常你遇到过哪些情况.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                        <b>2.1.20.</b>
+                    
+                    Java面向对象的三个特征与含义.以及面向对象的五个原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../EXAM-SUMMARY.html">
+            
+                <a href="../EXAM-SUMMARY.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    exam
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../exam/exam1.html">
+            
+                <a href="../exam/exam1.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    exam1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java并发</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../并发/乐观锁与悲观锁.html">
+            
+                <a href="../../并发/乐观锁与悲观锁.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    乐观锁与悲观锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../并发/CAS.html">
+            
+                <a href="../../并发/CAS.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    CAS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../并发/JUC.html">
+            
+                <a href="../../并发/JUC.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    JUC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../并发/AQS原理.html">
+            
+                <a href="../../并发/AQS原理.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    AQS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../并发/锁.html">
+            
+                <a href="../../并发/锁.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">分布式</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../分布式/分布式事务.html">
+            
+                <a href="../../分布式/分布式事务.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    分布式事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../分布式/网络编程.html">
+            
+                <a href="../../分布式/网络编程.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">消息队列</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../消息队列/ActiveMQ.html">
+            
+                <a href="../../消息队列/ActiveMQ.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    ActiveMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../消息队列/RabbitMQ.html">
+            
+                <a href="../../消息队列/RabbitMQ.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">jvm</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../jvm/类加载机制.html">
+            
+                <a href="../../jvm/类加载机制.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    类加载机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../jvm/对象的创建与内存分配.html">
+            
+                <a href="../../jvm/对象的创建与内存分配.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    对象的创建与内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../jvm/jvm标准.html">
+            
+                <a href="../../jvm/jvm标准.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    jvm标准
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../../jvm/GC.html">
+            
+                <a href="../../jvm/GC.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    GC垃圾回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../java基础/java基础.html">
+            
+                <a href="../../java基础/java基础.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    java 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../java基础/HashMap.html">
+            
+                <a href="../../java基础/HashMap.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../java基础/ConcurrentHashMap.html">
+            
+                <a href="../../java基础/ConcurrentHashMap.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    ConcurrentHashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../java基础/Set.html">
+            
+                <a href="../../java基础/Set.html">
+            
+                    
+                        <b>7.4.</b>
+                    
+                    Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../java基础/List.html">
+            
+                <a href="../../java基础/List.html">
+            
+                    
+                        <b>7.5.</b>
+                    
+                    List
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 线程</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../java线程/java多线程.html">
+            
+                <a href="../../java线程/java多线程.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../java线程/lock.html">
+            
+                <a href="../../java线程/lock.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    Lock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../../java线程/ReentrantLock.html">
+            
+                <a href="../../java线程/ReentrantLock.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    ReentrantLock 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 框架</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../java框架/spring/spring注入方式.html">
+            
+                <a href="../../java框架/spring/spring注入方式.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    spring注入方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../../java框架/spring/SpringBean生命周期.html">
+            
+                <a href="../../java框架/spring/SpringBean生命周期.html">
+            
+                    
+                        <b>9.2.</b>
+                    
+                    springbean生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../../java框架/spring/SpringMVC.html">
+            
+                <a href="../../java框架/spring/SpringMVC.html">
+            
+                    
+                        <b>9.3.</b>
+                    
+                    springmvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../../java框架/spring/AOP.html">
+            
+                <a href="../../java框架/spring/AOP.html">
+            
+                    
+                        <b>9.4.</b>
+                    
+                    AOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../../java框架/spring/Ioc.html">
+            
+                <a href="../../java框架/spring/Ioc.html">
+            
+                    
+                        <b>9.5.</b>
+                    
+                    IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../../java框架/spring/proxy.html">
+            
+                <a href="../../java框架/spring/proxy.html">
+            
+                    
+                        <b>9.6.</b>
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../../java框架/spring/cglib.html">
+            
+                <a href="../../java框架/spring/cglib.html">
+            
+                    
+                        <b>9.7.</b>
+                    
+                    cglib
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../../java框架/hibernate.html">
+            
+                <a href="../../java框架/hibernate.html">
+            
+                    
+                        <b>9.8.</b>
+                    
+                    hibernate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../../java框架/springboot.html">
+            
+                <a href="../../java框架/springboot.html">
+            
+                    
+                        <b>9.9.</b>
+                    
+                    springboot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../../java框架/springcloud.html">
+            
+                <a href="../../java框架/springcloud.html">
+            
+                    
+                        <b>9.10.</b>
+                    
+                    springcloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">java 面试</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../../java面试题.html">
+            
+                <a href="../../java面试题.html">
+            
+                    
+                        <b>10.1.</b>
+                    
+                    java面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../../数据库/MySQL/mysql索引.html">
+            
+                <a href="../../数据库/MySQL/mysql索引.html">
+            
+                    
+                        <b>11.1.</b>
+                    
+                    mysql索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../../数据库/MySQL/SQL优化.html">
+            
+                <a href="../../数据库/MySQL/SQL优化.html">
+            
+                    
+                        <b>11.2.</b>
+                    
+                    SQL 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../../数据库/幂等性.html">
+            
+                <a href="../../数据库/幂等性.html">
+            
+                    
+                        <b>11.3.</b>
+                    
+                    幂等性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../../数据库/数据库锁机制.html">
+            
+                <a href="../../数据库/数据库锁机制.html">
+            
+                    
+                        <b>11.4.</b>
+                    
+                    数据库锁机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">network</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../../network/http.html">
+            
+                <a href="../../network/http.html">
+            
+                    
+                        <b>12.1.</b>
+                    
+                    http请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../../network/TCP三次协议.html">
+            
+                <a href="../../network/TCP三次协议.html">
+            
+                    
+                        <b>12.2.</b>
+                    
+                    Tcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">git</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" data-path="../../git/gitnote.html">
+            
+                <a href="../../git/gitnote.html">
+            
+                    
+                        <b>13.1.</b>
+                    
+                    git笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">面试经验</li>
+        
+        
+    
+        <li class="chapter " data-level="14.1" data-path="../../面试经验/interview.html">
+            
+                <a href="../../面试经验/interview.html">
+            
+                    
+                        <b>14.1.</b>
+                    
+                    interview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="14.2" data-path="../../面试经验/阿里大佬面试题.html">
+            
+                <a href="../../面试经验/阿里大佬面试题.html">
+            
+                    
+                        <b>14.2.</b>
+                    
+                    啊里
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >HashMap和ConcurrentHashMap的区别,HashMap的底层源码.</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="hashmap&#x548C;concurrenthashmap&#x7684;&#x533A;&#x522B;hashmap&#x7684;&#x5E95;&#x5C42;&#x6E90;&#x7801;">HashMap&#x548C;ConcurrentHashMap&#x7684;&#x533A;&#x522B;,HashMap&#x7684;&#x5E95;&#x5C42;&#x6E90;&#x7801;.</h1>
+<p>&#x8BE6;&#x7EC6;&#x53C2;&#x8003;<a href="../../java&#x57FA;&#x7840;/HashMap.html">HashMap</a>
+<a href="../../java&#x57FA;&#x7840;/ConcurrentHashMap.html">ConcurrentHashMap</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10.html" class="navigation navigation-prev " aria-label="Previous page: HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="12.html" class="navigation navigation-next " aria-label="Next page: TreeMap,HashMap,LindedHashMap的区别.">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HashMap和ConcurrentHashMap的区别,HashMap的底层源码.","level":"2.1.15","depth":2,"next":{"title":"TreeMap,HashMap,LindedHashMap的区别.","level":"2.1.16","depth":2,"path":"citicbank/study/12.md","ref":"citicbank/study/12.md","articles":[]},"previous":{"title":"HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别","level":"2.1.14","depth":2,"path":"citicbank/study/10.md","ref":"citicbank/study/10.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"anchor-navigation-ex":{"showLevel":false,"showGoTop":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"lixiaoshuang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"java学习","language":"zh-hans","links":{"sidebar":{"github":"https://github.com/ldouble98","博客":"https://blog.csdn.net/weixin_38190582","笔记":"https://lxs-shmily.gitbook.io/java-notes/","知乎":"https://www.zhihu.com/people/li-xiao-shuang-53-63/activities"}},"gitbook":"*","description":"java学习笔记-smalldouble"},"file":{"path":"citicbank/study/11.md","mtime":"2019-08-30T06:14:54.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-30T06:44:57.031Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

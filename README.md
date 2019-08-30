@@ -3,8 +3,10 @@
     email：leesmalldouble@gmail.com
 
 # citicbank   
-   - [citicbank](citicbank/citicbank学习知识点.md)
-   - [exam1](citicbank/exam1.md)
+   - [citicbank](citicbank/CITIC-SUMMARY.md)
+   - [exam1](citicbank/exam/exam1.md)
+   
+   
 # java学习笔记
    + java并发
       + [乐观锁与悲观锁](并发/乐观锁与悲观锁.md)

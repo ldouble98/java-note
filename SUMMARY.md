@@ -5,14 +5,34 @@
    ## Introduction
    + [summary](README.md)
    + [java-note](Book.md)
-
-#
-   ## java学习笔记
-
+  
 #   
    ## citicbank   
-   + [citicbank](citicbank/citicbank学习知识点.md)
-   + [exam1](citicbank/exam1.md)
+   + [citic-summary](citicbank/CITIC-SUMMARY.md)
+       - [Switch可以用的参数种类](citicbank/study/2.md)
+       - [Object有哪些公用方法?](citicbank/study/3.md)
+       - [HTTP缓存](citicbank/study/4.md)
+       - [Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.](citicbank/citicbank/study/6.md)
+       - [八种基本数据类型的大小,以及他们的封装类](citicbank/study/1.md)
+       - [Switch可以用的参数种类](citicbank/study/2.md)
+       - [Object有哪些公用方法?](citicbank/study/3.md)
+       - [HTTP缓存](citicbank/study/4.md)
+       - [Java的四种引用,强弱软虚,用到的场景.](citicbank/study/5.md)
+       - [Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.](citicbank/study/6.md)
+       - [ArrayList,LinkedList,Vector的区别.](citicbank/study/7.md)    
+       - [String,StringBuffer与StringBuilder的区别](citicbank/study/8.md)
+       - [Map,Set,List,Queue,Stack的特点与用法](citicbank/study/9.md)
+       - [HashMap和HashTable的区别.要深层理解,不只是线程安全,还有Hash算法的区别](citicbank/study/10.md)
+       - [HashMap和ConcurrentHashMap的区别,HashMap的底层源码.](citicbank/study/11.md)
+       - [TreeMap,HashMap,LindedHashMap的区别.](citicbank/study/12.md)
+       - [Collection包结构,与Collections的区别.](citicbank/study/13.md)
+       - [try catch finally,try里有return,finally还执行么?](citicbank/study/14.md)
+       - [Excption与Error包结构.非检查异常你遇到过哪些情况,检查异常你遇到过哪些情况.](citicbank/study/15.md)
+       - [Java面向对象的三个特征与含义.以及面向对象的五个原则](citicbank/study/16.md)
+   + [exam](citicbank/EXAM-SUMMARY.md)
+       - [exam1](citicbank/exam/exam1.md)
+       
+
 
 #   
    ## java并发     
