@@ -1,12 +1,12 @@
 # CAS 笔记
- > CompareAndSet or CompareAndSwap 比较在交换
+CompareAndSet or CompareAndSwap 比较在交换
  利用CAS实现乐观锁，乐观锁是一种思想。CAS是这种思想的一种实现方式
 # 操作数
 CAS上有三个操作数：
  - V： 需要读写的内存位置
  - A： 旧的预期变量值
  - B： 拟写入的新的值
-> 操作过程 在进行CompareAndSwap之前，将V与A比较，如果两者相等，则将
+操作过程 在进行CompareAndSwap之前，将V与A比较，如果两者相等，则将
 此位置的值更新为B，如果不相等，处理器不做任何操作；无论那种情况，都会放回V中
 存放的值
 
