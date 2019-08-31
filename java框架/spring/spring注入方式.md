@@ -13,12 +13,13 @@
 # 注入方法
 ## 注解方法
     @Autowired：自动装配
-        - 默认yibyType的方式注入
+        - 默认byType的方式注入
         - 通过将@Autowired注解放在构造器上来完成构造器注入，默认构造器参数通过类型自动装配
         - 通过将@Autowired注解放在构造器上来完成字段注入
         - 通过将@Autowired注解放在方法上来完成方法参数注入
     @Resource
         - java java的注解，默认使用byName的方式，
+        
 ## set方法注入
 
 ## 构造器注入
