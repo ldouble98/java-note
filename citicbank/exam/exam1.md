@@ -107,8 +107,10 @@ public class CountABC {
 - i++;++i;return i++; return ++i; i=i++;i=++i;
     
     i++: 先赋值后运算
-    ++i: 先运算后赋值
     
+    ++i: 先运算后赋值
+        
+        TODO 待办
     
     
     
