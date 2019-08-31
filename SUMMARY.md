@@ -9,10 +9,6 @@
 #   
    ## citicbank   
    + [citic-summary](citicbank/CITIC-SUMMARY.md)
-       - [Switch可以用的参数种类](citicbank/study/2.md)
-       - [Object有哪些公用方法?](citicbank/study/3.md)
-       - [HTTP缓存](citicbank/study/4.md)
-       - [Hashcode的作用以及原理,Hash的算法:开放地址法和链地址法的对比.Hash扩容及加载因子的介绍.rehash过程等.](citicbank/citicbank/study/6.md)
        - [八种基本数据类型的大小,以及他们的封装类](citicbank/study/1.md)
        - [Switch可以用的参数种类](citicbank/study/2.md)
        - [Object有哪些公用方法?](citicbank/study/3.md)
