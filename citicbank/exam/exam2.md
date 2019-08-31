@@ -83,17 +83,25 @@ BeanFactory接口有多个`实现类`，最常用的是`XMLBeanFactory`,根据XM
     ```
    
 - 静态工厂注入
-    
+   
+        TODO
 - 实例工厂注入
 
+        TODO
 
 ## Spring Annotation (重点)
 @Component 装配自己写的类
+
 @Bean 装配外部写的类
+
 @Autowired  Bean的自动装配
+
 @Resource
+
 @Service 标注一个业务逻辑组件类
+
 @Controller 标注一个控制器组件类
+
 @Repository ：标注一个DAO组件类
 
 ## Spring Bean 的作用域
