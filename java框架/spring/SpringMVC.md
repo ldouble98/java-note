@@ -1,7 +1,7 @@
 # spring MVC
 MVC 框架
-> spring MVC  流程图  
->图片来源网络
+- spring MVC  流程图  
+图片来源网络
 ![SpringMVC](SpringMVC.png)
 
 
