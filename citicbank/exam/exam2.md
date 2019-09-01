@@ -109,6 +109,7 @@ BeanFactory接口有多个`实现类`，最常用的是`XMLBeanFactory`,根据XM
  `Prototype`:
  
  参考一二组第二次考试答案
+ 
  1. `singleton`：Spring IoC容器中只会存在`一个`共享`的Bean实例，无论有多少个Bean引用它，始终指向`同一对象`。Singleton作用域是Spring中的缺省作用域。
  
  2. `prototype`：每次通过Spring容器获取prototype定义的bean时，容器都将创建一个`新的Bean实例`，每个Bean实例都有`自己的属性和状态`，而singleton全局只有一个对象。
