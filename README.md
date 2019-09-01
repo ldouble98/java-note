@@ -1,6 +1,4 @@
-# java Notes
-    github：https://github.com/ldouble98
-    email：leesmalldouble@gmail.com
+
 
 # citicbank   
    - [citicbank](citicbank/CITIC-SUMMARY.md)
