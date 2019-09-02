@@ -16,7 +16,7 @@
 - [Excption与Error包结构.非检查异常你遇到过哪些情况,检查异常你遇到过哪些情况.](study/15.md)
 - [Java面向对象的三个特征与含义.以及面向对象的五个原则](study/16.md)
 
-17. Override和Overload的含义去区别.
+- [Override和Overload的含义去区别.](study/17.md)
 18. Interface与abstract类的区别,应用场景.
 19. Static class 与non static class的区别.
 20. java多态的实现原理.
