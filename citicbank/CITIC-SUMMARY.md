@@ -28,7 +28,7 @@
 26. ThreadPool用法与优势.
 27. Concurrent包里的其他东西:ArrayBlockingQueue,CountDownLatch等等.
 28. wait()和sleep()的区别.
-29. foreach与正常for循环效率对比.
+- [foreach与正常for循环效率对比.](study/29.md)
 30. Java IO.
 31. 反射的作用于原理.
 32. 泛型常用特点.
