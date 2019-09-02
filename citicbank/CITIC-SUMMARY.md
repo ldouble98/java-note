@@ -27,7 +27,7 @@
 25. ThreadLocal的设计理念与作用.
 26. ThreadPool用法与优势.
 27. Concurrent包里的其他东西:ArrayBlockingQueue,CountDownLatch等等.
-28. wait()和sleep()的区别.
+- [wait()和sleep()的区别.](study/28.md)
 - [foreach与正常for循环效率对比.](study/29.md)
 30. Java IO.
 31. 反射的作用于原理.
