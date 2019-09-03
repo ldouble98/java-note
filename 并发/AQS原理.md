@@ -21,7 +21,7 @@
    
 > [利用CAS 实现](CAS.md)
 
-详细介绍[ReenTranLock](../java/java线程/ReentrantLock.md)
+详细介绍[ReenTranLock](../java线程/ReentrantLock.md)
  
 [http://www.cnblogs.com/waterystone/p/4920797.html][参考博客]
 
