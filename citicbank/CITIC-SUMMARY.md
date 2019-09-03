@@ -15,20 +15,23 @@
 - [try catch finally,try里有return,finally还执行么?](study/14.md)
 - [Excption与Error包结构.非检查异常你遇到过哪些情况,检查异常你遇到过哪些情况.](study/15.md)
 - [Java面向对象的三个特征与含义.以及面向对象的五个原则](study/16.md)
-
 - [Override和Overload的含义去区别.](study/17.md)
-18. Interface与abstract类的区别,应用场景.
+- [Interface与abstract类的区别,应用场景.](study/18.md)
+
 19. Static class 与non static class的区别.
 20. java多态的实现原理.
 21. 实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用.
 22. 线程同步的方法:sychronized,lock,reentrantLock,Condition等.
 23. 锁的等级:方法锁,对象锁,类锁.
+
 24. 写出生产者消费者模式.用阻塞队列和不用的情况.
 25. ThreadLocal的设计理念与作用.
 26. ThreadPool用法与优势.
 27. Concurrent包里的其他东西:ArrayBlockingQueue,CountDownLatch等等.
+
 - [wait()和sleep()的区别.](study/28.md)
 - [foreach与正常for循环效率对比.](study/29.md)
+
 30. Java IO.
 31. 反射的作用于原理.
 32. 泛型常用特点.
