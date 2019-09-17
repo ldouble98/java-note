@@ -18,7 +18,7 @@
 - [Override和Overload的含义去区别.](study/17.md)
 - [Interface与abstract类的区别,应用场景.](study/18.md)
 
-19. Static class 与non static class的区别.
+- [Static class 与non static class的区别.](study/19.md)
 20. java多态的实现原理.
 21. 实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用.
 22. 线程同步的方法:sychronized,lock,reentrantLock,Condition等.

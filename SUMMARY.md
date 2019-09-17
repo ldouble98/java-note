@@ -30,6 +30,7 @@
        - [Java面向对象的三个特征与含义.以及面向对象的五个原则](citicbank/study/16.md)
        - [Override和Overload的含义去区别.](citicbank/study/17.md)
        - [Interface与abstract类的区别,应用场景.](citicbank/study/18.md)
+       - [Static class 与non static class的区别.](citicbank/study/19.md)
 
        - [wait()和sleep()的区别.](citicbank/study/28.md)
        - [foreach与正常for循环效率对比.](citicbank/study/29.md)
