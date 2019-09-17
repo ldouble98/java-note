@@ -31,6 +31,7 @@
        - [Override和Overload的含义去区别.](citicbank/study/17.md)
        - [Interface与abstract类的区别,应用场景.](citicbank/study/18.md)
        - [Static class 与non static class的区别.](citicbank/study/19.md)
+       - [java多态的实现原理.](citicbank/study/20.md)
 
        - [wait()和sleep()的区别.](citicbank/study/28.md)
        - [foreach与正常for循环效率对比.](citicbank/study/29.md)
