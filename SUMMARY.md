@@ -33,7 +33,8 @@
        - [Static class 与non static class的区别.](citicbank/study/19.md)
        - [java多态的实现原理.](citicbank/study/20.md)
        - [实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用](citicbank/study/21.md).
-
+       - [线程同步的方法:sychronized,lock,reentrantLock,Condition等](citicbank/study/22.md).
+       - [锁的等级:方法锁,对象锁,类锁.](citicbank/study/23.md)
        - [wait()和sleep()的区别.](citicbank/study/28.md)
        - [foreach与正常for循环效率对比.](citicbank/study/29.md)
        
