@@ -20,7 +20,7 @@
 
 - [Static class 与non static class的区别.](study/19.md)
 - [java多态的实现原理.](study/20.md)
-21. 实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用.
+- [实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用](study/21.md).
 22. 线程同步的方法:sychronized,lock,reentrantLock,Condition等.
 23. 锁的等级:方法锁,对象锁,类锁.
 

@@ -32,6 +32,7 @@
        - [Interface与abstract类的区别,应用场景.](citicbank/study/18.md)
        - [Static class 与non static class的区别.](citicbank/study/19.md)
        - [java多态的实现原理.](citicbank/study/20.md)
+       - [实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用](citicbank/study/21.md).
 
        - [wait()和sleep()的区别.](citicbank/study/28.md)
        - [foreach与正常for循环效率对比.](citicbank/study/29.md)
