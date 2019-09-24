@@ -37,6 +37,7 @@
        - [锁的等级:方法锁,对象锁,类锁.](citicbank/study/23.md)
        - [wait()和sleep()的区别.](citicbank/study/28.md)
        - [foreach与正常for循环效率对比.](citicbank/study/29.md)
+       - [写出生产者消费者模式.用阻塞队列和不用的情况.](citicbank/study/24.md)
        
    + [exam](citicbank/EXAM-SUMMARY.md)
        - [exam1-java](citicbank/exam/exam1.md)
@@ -67,7 +68,7 @@
    + [类加载机制](jvm/类加载机制.md)
    + [对象的创建与内存分配](jvm/对象的创建与内存分配.md)
    + [jvm标准](jvm/jvm标准.md)
-   ++ [7种垃圾收集器](jvm/垃圾收集器.md)
+   + [7种垃圾收集器](jvm/垃圾收集器.md)
    + [GC垃圾回收](jvm/GC.md)
 
 #

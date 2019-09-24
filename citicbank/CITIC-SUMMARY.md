@@ -23,8 +23,8 @@
 - [实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用](study/21.md).
 - [线程同步的方法:sychronized,lock,reentrantLock,Condition等](study/22.md).
 - [锁的等级:方法锁,对象锁,类锁.](study/23.md)
+- [写出生产者消费者模式.用阻塞队列和不用的情况.](study/24.md)
 
-24. 写出生产者消费者模式.用阻塞队列和不用的情况.
 25. ThreadLocal的设计理念与作用.
 26. ThreadPool用法与优势.
 27. Concurrent包里的其他东西:ArrayBlockingQueue,CountDownLatch等等.
