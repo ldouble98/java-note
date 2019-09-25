@@ -17,7 +17,6 @@
 - [Java面向对象的三个特征与含义.以及面向对象的五个原则](study/16.md)
 - [Override和Overload的含义去区别.](study/17.md)
 - [Interface与abstract类的区别,应用场景.](study/18.md)
-
 - [Static class 与non static class的区别.](study/19.md)
 - [java多态的实现原理.](study/20.md)
 - [实现多线程的两种方法:Thread与Runable.以及wait,join,notify等的使用](study/21.md).
