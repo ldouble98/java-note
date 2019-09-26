@@ -25,7 +25,7 @@
 - [写出生产者消费者模式.用阻塞队列和不用的情况.](study/24.md)
 
 25. ThreadLocal的设计理念与作用.
-26. ThreadPool用法与优势.
+[ThreadPool用法与优势.](study/26.md)
 27. Concurrent包里的其他东西:ArrayBlockingQueue,CountDownLatch等等.
 
 - [wait()和sleep()的区别.](study/28.md)
