@@ -2,8 +2,10 @@
 ##BIO
 传统的IO方式，会在`socket.accept()`方法和`read()`方法发生阻塞。
 第一次阻塞等待客户端的连接，第二次阻塞等待客户端的IO操作，这样会导致cpu一直在那等待，造成资源的浪费。
->传统的socket通信方式：
+传统的socket通信方式：
+
 - client handler
+
 ```java
 package Demo4;
 
@@ -45,7 +47,9 @@ public class BioClientHandler implements Runnable {
 }
 
 ```
+
 - Bio 客户端
+
 ```java
 package Demo4;
 
@@ -94,7 +98,9 @@ public class BioClient {
     }
 }
 ```
+
 - 服务端
+
 ```java
 package Demo4;
 
@@ -147,7 +153,9 @@ public class BioServer {
 }
 
 ```
+
 - bio server handler
+
 ```java
 package Demo4;
 
@@ -219,10 +227,14 @@ public class BioServerHandler implements Runnable {
 }
 
 ```
+
 `bio`方式的缺点：浪费cpu资源，同步阻塞方式。
+
 ##NIO
 nio与bio相比解决了bio两次阻塞的问题（解阻塞）
+
 - NIO client
+
 ```java
 package niodemo;
 
@@ -299,5 +311,6 @@ public class NioClient {
     }
 }
 ```
+
 ## AIO
 异步非阻塞 IO
