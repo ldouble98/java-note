@@ -11,7 +11,7 @@ for rapid development of maintainable high performance protocol servers & client
 
 在netty中 ByteBuf 和nio 中ByteBuffer是不同的概念。
 
-
+当需要写出时，推荐使用堆外内存
 
 - pipeline
 
@@ -125,4 +125,5 @@ public class TestServer {
 
 ```
 
-## 原理
+## 原理极其源码笔记
+
